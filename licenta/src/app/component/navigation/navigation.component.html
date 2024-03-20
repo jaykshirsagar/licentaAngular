@@ -1,0 +1,91 @@
+<nav class="navbar bg-body-tertiary1 fixed-top" style="background-color: aqua;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="settings"></fa-icon></a>
+      <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="house"></fa-icon></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Lista laboratoare</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}" (input)="filterLaboratories()">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+          </form>
+        <br>
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item" *ngFor="let lab of filteredLaboratories">
+              <a class="nav-link" [routerLink]="'/home'">{{ lab.name }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+<!-- <nav class="navbar bg-body-tertiary1 fixed-top" style="background-color: aqua;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="house"></fa-icon></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">Laborator 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 5</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 6</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 7</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 8</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 9</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 10</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 11</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Laborator 12</a>
+              </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+   -->
