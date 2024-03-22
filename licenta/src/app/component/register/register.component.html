@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4>Register</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="false">
+                            <!-- Slides -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <!-- Slide pentru email -->
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" class="form-control" [(ngModel)]="emailRegister" [ngModelOptions]="{standalone: true}" required>
+                                </div>
+                                <div class="carousel-item">
+                                    <!-- Slide pentru parolă -->
+                                    <label for="password">Parolă:</label>
+                                    <input type="password" id="password" name="password" class="form-control" [(ngModel)]="passRegister" [ngModelOptions]="{standalone: true}" required>
+                                    <label for="passwordConfirm">Confirmare parolă:</label>
+                                    <input type="passwordConfirm" id="passwordConfirm" name="passwordConfirm" class="form-control" required>
+                                </div>
+                                <div class="carousel-item">
+                                    <label for="nume">Nume:</label>
+                                    <input type="nume" id="nume" name="nume" class="form-control" [(ngModel)]="numeRegister" [ngModelOptions]="{standalone: true}" required>
+                                    <label for="prenume">Prenume:</label>
+                                    <input type="prenume" id="prenume" name="prenume" class="form-control" [(ngModel)]="prenumeRegister" [ngModelOptions]="{standalone: true}" required>
+                                    <label for="function">Funcție:</label>
+                                        <select id="function" [(ngModel)]="functieRegister" name="function" class="form-control" required>
+                                            <option value="" disabled selected>-</option>
+                                            <option value="Student" >Student</option>
+                                            <option value="Professor">Professor</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    @if (currentSlideIndex == 0) {
+                        <a></a>
+                        <button class="btn btn-primary" (click)="nextSlide()" data-bs-target="#myCarousel" data-bs-slide="next">Inainte</button>
+                    }
+                    @if (currentSlideIndex == 1) {
+                        <button class="btn btn-primary" (click)="prevSlide()" data-bs-target="#myCarousel" data-bs-slide="prev">Inapoi</button>
+                        <button class="btn btn-primary" (click)="nextSlide()" data-bs-target="#myCarousel" data-bs-slide="next">Inainte</button>
+                    }
+                    @if(currentSlideIndex == 2) {
+                        <button class="btn btn-primary" (click)="prevSlide()" data-bs-target="#myCarousel" data-bs-slide="prev">Inapoi</button>
+                        <button class="btn btn-primary" (click)="confirmRegister()">Confirmare</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

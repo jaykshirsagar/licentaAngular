@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGears, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { DataService } from '../../service.service';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })
-export class NavigationComponent {
+export class NavigationComponent{
+  constructor(private http: DataService){}
+  userRole = this.http.userLogged.functie;
+  userName = this.http.userLogged.name + " " + this.http.userLogged.prenume;
   house = faHouse;
   settings = faGears;
   searchTerm: string = '';

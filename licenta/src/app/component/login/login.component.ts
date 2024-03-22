@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit{
     if (matchingUser) {
       // Credentials match! You can proceed with further actions.
       this.router.navigate(['home']);
+      this.http.userLogged = matchingUser;
     } else {
       // Credentials do not match any user.
       alert('Incorect');

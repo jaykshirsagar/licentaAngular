@@ -1,6 +1,16 @@
 <nav class="navbar bg-body-tertiary1 fixed-top" style="background-color: aqua;">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="settings"></fa-icon></a>
+      @if (userRole == 'ADMIN' || userRole == 'Profesor') {
+        <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="settings"></fa-icon></a>
+      }
+      @else {
+        <a class="navbar-brand dropdown-" role="button" data-bs-toggle="dropdown">{{userName}}</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      }
       <a class="navbar-brand" routerLink="/home"><fa-icon [icon]="house"></fa-icon></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
