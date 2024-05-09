@@ -11,6 +11,7 @@ import { provideRouter } from '@angular/router';
 import { NavigationComponent } from './component/navigation/navigation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './component/register/register.component';
+import { Lab1Component } from './component/lab1/lab1.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterComponent } from './component/register/register.component';
     LoginComponent,
     HomeComponent,
     NavigationComponent,
-    RegisterComponent
+    RegisterComponent,
+    Lab1Component
   ],
   imports: [
     BrowserModule,
@@ -35,3 +37,4 @@ import { RegisterComponent } from './component/register/register.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

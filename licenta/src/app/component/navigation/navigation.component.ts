@@ -2,16 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGears, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { DataService } from '../../service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })
-export class NavigationComponent{
-  constructor(private http: DataService){}
-  userRole = this.http.userLogged.functie;
-  userName = this.http.userLogged.name + " " + this.http.userLogged.prenume;
+export class NavigationComponent implements OnInit{
+  constructor(private http: DataService, private router: Router){}
+  ngOnInit(): void {
+    this.http.getUserLogged().subscribe((data)=>{
+      this.userRole = data.functie;
+      this.userName = data.name + " " + data.prenume;
+    })
+  }
+  userRole! : string;
+  userName!: string;
   house = faHouse;
   settings = faGears;
   searchTerm: string = '';
@@ -36,6 +43,11 @@ export class NavigationComponent{
     this.filteredLaboratories = this.laboratories.filter(lab => 
       lab.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+  }
+
+  onClick() {
+    this.http.logout().subscribe();
+    this.router.navigate(['/login']);
   }
 
 }

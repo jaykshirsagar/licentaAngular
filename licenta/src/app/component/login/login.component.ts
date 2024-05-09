@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Routes } from '@angular/router';
 import { DataService } from '../../service.service';
 import { FormsModule, NgModel } from '@angular/forms';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,13 +27,18 @@ export class LoginComponent implements OnInit{
   onClick(): void {
     alert(this.email + ' ' + this.pass);
     const matchingUser = this.users.find((user) => {
-      return user.email === this.email && user.password === this.pass;
+      if(user.email === this.email && user.password === this.pass)
+      {
+        this.http.loggedIn = true;
+        return true;
+      }
+      return false;
     });
   
     if (matchingUser) {
       // Credentials match! You can proceed with further actions.
       this.router.navigate(['home']);
-      this.http.userLogged = matchingUser;
+      this.http.setUserLogged(matchingUser).subscribe();
     } else {
       // Credentials do not match any user.
       alert('Incorect');
