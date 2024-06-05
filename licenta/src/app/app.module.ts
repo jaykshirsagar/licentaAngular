@@ -12,6 +12,8 @@ import { NavigationComponent } from './component/navigation/navigation.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './component/register/register.component';
 import { Lab1Component } from './component/lab1/lab1.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { Lab1Component } from './component/lab1/lab1.component';
     HomeComponent,
     NavigationComponent,
     RegisterComponent,
-    Lab1Component
+    Lab1Component,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxFileDropModule
   ],
   providers: [
     provideClientHydration(),
