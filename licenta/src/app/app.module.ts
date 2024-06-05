@@ -14,6 +14,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { Lab1Component } from './component/lab1/lab1.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { ProfilComponent } from './component/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     NavigationComponent,
     RegisterComponent,
     Lab1Component,
-    SettingsComponent
+    SettingsComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

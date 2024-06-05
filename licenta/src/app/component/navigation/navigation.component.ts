@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent implements OnInit{
+  
   constructor(private http: DataService, private router: Router){}
   ngOnInit(): void {
     this.http.getUserLogged().subscribe((data)=>{

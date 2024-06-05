@@ -1,0 +1,13 @@
+/* Stiluri CSS pentru a personaliza input-urile și butonul */
+.input-round-small {
+    width: 50%; /* Ajustați lățimea după preferințe */
+    border-radius: 20px; /* Pentru a face input-urile rotunde */
+    margin-bottom: 10px; /* Spațiu între input-uri */
+  }
+  
+  .btn-center {
+    display: block; /* Pentru a permite centrarea cu margin auto */
+    width: 50%; /* Ajustați lățimea după preferințe */
+    margin: 10px auto; /* Centrarea butonului și spațiu deasupra și dedesubt */
+  }
+  
